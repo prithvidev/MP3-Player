@@ -14,6 +14,7 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.Line;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -33,7 +34,7 @@ public class mp3 extends javax.swing.JFrame {
     //the path from where the song is playing
     String path;
     //boolean for repeat
-    boolean repeatbtn = false;
+    boolean repeat = false;
     //window collapsed
     boolean windowCollapsed = false;
     //image path
@@ -43,13 +44,13 @@ public class mp3 extends javax.swing.JFrame {
     int xmouse, ymouse;
     public mp3() {
         initComponents();
-        song = new File("E:\\prithvi\\Sound Recording\\aatihotobarish.mp3");
+        song = new File("E:\\Chal Ghar Chalen.mp3");
         String filename = song.getName();
         song_name.setText(filename);
         player = mp3player();
         player.addToPlayList(song);
         current = Paths.get(".").toAbsolutePath().normalize().toString();
-        imagepath = "\\images";
+        //imagepath = "\\images";
     }
 
     /**
@@ -138,6 +139,11 @@ public class mp3 extends javax.swing.JFrame {
 
         playbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/play-button.png"))); // NOI18N
         playbtn.setContentAreaFilled(false);
+        playbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                playbtnMouseClicked(evt);
+            }
+        });
         playbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playbtnActionPerformed(evt);
@@ -146,6 +152,11 @@ public class mp3 extends javax.swing.JFrame {
 
         pausebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/pause.png"))); // NOI18N
         pausebtn.setContentAreaFilled(false);
+        pausebtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pausebtnMouseClicked(evt);
+            }
+        });
         pausebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pausebtnActionPerformed(evt);
@@ -154,6 +165,11 @@ public class mp3 extends javax.swing.JFrame {
 
         stopbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/stop.png"))); // NOI18N
         stopbtn.setContentAreaFilled(false);
+        stopbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                stopbtnMouseClicked(evt);
+            }
+        });
         stopbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stopbtnActionPerformed(evt);
@@ -162,6 +178,11 @@ public class mp3 extends javax.swing.JFrame {
 
         openbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/files-and-folders.png"))); // NOI18N
         openbtn.setContentAreaFilled(false);
+        openbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openbtnMouseClicked(evt);
+            }
+        });
         openbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openbtnActionPerformed(evt);
@@ -170,6 +191,11 @@ public class mp3 extends javax.swing.JFrame {
 
         voldown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume-down.png"))); // NOI18N
         voldown.setContentAreaFilled(false);
+        voldown.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                voldownMouseClicked(evt);
+            }
+        });
         voldown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voldownActionPerformed(evt);
@@ -178,6 +204,11 @@ public class mp3 extends javax.swing.JFrame {
 
         volup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume-up.png"))); // NOI18N
         volup.setContentAreaFilled(false);
+        volup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                volupMouseClicked(evt);
+            }
+        });
         volup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volupActionPerformed(evt);
@@ -186,6 +217,11 @@ public class mp3 extends javax.swing.JFrame {
 
         volfull.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume.png"))); // NOI18N
         volfull.setContentAreaFilled(false);
+        volfull.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                volfullMouseClicked(evt);
+            }
+        });
         volfull.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volfullActionPerformed(evt);
@@ -194,6 +230,11 @@ public class mp3 extends javax.swing.JFrame {
 
         mute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/mute.png"))); // NOI18N
         mute.setContentAreaFilled(false);
+        mute.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                muteMouseClicked(evt);
+            }
+        });
         mute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 muteActionPerformed(evt);
@@ -202,6 +243,11 @@ public class mp3 extends javax.swing.JFrame {
 
         repe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/endless.png"))); // NOI18N
         repe.setContentAreaFilled(false);
+        repe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                repeMouseClicked(evt);
+            }
+        });
         repe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 repeActionPerformed(evt);
@@ -289,15 +335,15 @@ public class mp3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void playbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbtnActionPerformed
-        player.play();
+       
     }//GEN-LAST:event_playbtnActionPerformed
 
     private void pausebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausebtnActionPerformed
-        player.pause();
+        
     }//GEN-LAST:event_pausebtnActionPerformed
 
     private void stopbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopbtnActionPerformed
-        player.stop();
+        
     }//GEN-LAST:event_stopbtnActionPerformed
 
     private void openbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openbtnActionPerformed
@@ -323,6 +369,58 @@ public class mp3 extends javax.swing.JFrame {
     private void repeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_repeActionPerformed
+
+    private void playbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playbtnMouseClicked
+        player.play();
+    }//GEN-LAST:event_playbtnMouseClicked
+
+    private void stopbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopbtnMouseClicked
+        player.stop();
+    }//GEN-LAST:event_stopbtnMouseClicked
+
+    private void pausebtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pausebtnMouseClicked
+        player.pause();
+    }//GEN-LAST:event_pausebtnMouseClicked
+
+    private void repeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repeMouseClicked
+       if(repeat == false){
+           repeat = true;
+           player.setRepeat(repeat);
+       }
+       else{
+           repeat = false;
+           player.setRepeat(repeat);
+       }
+    }//GEN-LAST:event_repeMouseClicked
+
+    private void openbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_openbtnMouseClicked
+        JFileChooser openFileChooser = new JFileChooser(current);
+        openFileChooser.setFileFilter(new FileTypeFilter(".mp3", "Open MP3 Files Only!"));
+        int result = openFileChooser.showOpenDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            song = openFileChooser.getSelectedFile();
+            player.addToPlayList(song);
+            player.skipForward();
+            current = song.getAbsolutePath();
+            song_name.setText("Playing Now... | " + song.getName());
+        }
+    }//GEN-LAST:event_openbtnMouseClicked
+
+    private void voldownMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voldownMouseClicked
+        volumeDowncontrol(0.1);
+    }//GEN-LAST:event_voldownMouseClicked
+
+    private void volupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volupMouseClicked
+        volumeUpcontrol(0.1);
+    }//GEN-LAST:event_volupMouseClicked
+
+    private void volfullMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volfullMouseClicked
+        volumecontrol(1.0);
+    }//GEN-LAST:event_volfullMouseClicked
+
+    private void muteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_muteMouseClicked
+        volumecontrol(0.0);
+    }//GEN-LAST:event_muteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -382,9 +480,10 @@ public class mp3 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private MP3Player mp3player(){
-        return mp3player();
+        MP3Player mp3player = new MP3Player();
+        return mp3player;
     }
-    private void volumedowncontrol(Double valuetoplusminus)
+    private void volumeDowncontrol(Double valuetoplusminus)
     {
         Mixer.Info[] mixers = AudioSystem.getMixerInfo();
         for(Mixer.Info mixerinfo: mixers){
@@ -403,6 +502,67 @@ public class mp3 extends javax.swing.JFrame {
                     float currentVolume = volControl.getValue();
                     Double volumetocut = valuetoplusminus;
                     float ChangedCalc = (float)((float)currentVolume - (double)volumetocut);
+                    volControl.setValue(ChangedCalc);
+                }catch(LineUnavailableException ll){}
+                catch(IllegalArgumentException ex){}
+                finally{
+                    if(line != null && !opened){
+                        line.close();
+                    }
+                }
+            }
+        }
+    }
+    private void volumeUpcontrol(Double valuetoplusminus)
+    {
+        Mixer.Info[] mixers = AudioSystem.getMixerInfo();
+        for(Mixer.Info mixerinfo: mixers){
+            Mixer mixer = AudioSystem.getMixer(mixerinfo);
+            Line.Info[] lineInfos = mixer.getTargetLineInfo();
+            for(Line.Info lineInfo: lineInfos){
+                Line line  =null;
+                Boolean opened = true;
+                try{
+                    line = mixer.getLine(lineInfo);
+                    opened = line.isOpen() || line instanceof Clip;
+                    if(!opened){
+                        line.open();
+                    }
+                    FloatControl volControl = (FloatControl) line.getControl(FloatControl.Type.VOLUME);
+                    float currentVolume = volControl.getValue();
+                    Double volumetocut = valuetoplusminus;
+                    float ChangedCalc = (float)((float)currentVolume + (double)volumetocut);
+                    volControl.setValue(ChangedCalc);
+                }catch(LineUnavailableException ll){}
+                catch(IllegalArgumentException ex){}
+                finally{
+                    if(line != null && !opened){
+                        line.close();
+                    }
+                }
+            }
+        }
+    }
+    
+    private void volumecontrol(Double valuetoplusminus)
+    {
+        Mixer.Info[] mixers = AudioSystem.getMixerInfo();
+        for(Mixer.Info mixerinfo: mixers){
+            Mixer mixer = AudioSystem.getMixer(mixerinfo);
+            Line.Info[] lineInfos = mixer.getTargetLineInfo();
+            for(Line.Info lineInfo: lineInfos){
+                Line line  =null;
+                Boolean opened = true;
+                try{
+                    line = mixer.getLine(lineInfo);
+                    opened = line.isOpen() || line instanceof Clip;
+                    if(!opened){
+                        line.open();
+                    }
+                    FloatControl volControl = (FloatControl) line.getControl(FloatControl.Type.VOLUME);
+                    float currentVolume = volControl.getValue();
+                    Double volumetocut = valuetoplusminus;
+                    float ChangedCalc = (float)((double)volumetocut);
                     volControl.setValue(ChangedCalc);
                 }catch(LineUnavailableException ll){}
                 catch(IllegalArgumentException ex){}
