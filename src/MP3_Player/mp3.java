@@ -28,26 +28,33 @@ public class mp3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        song_name = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         repeat = new javax.swing.JButton();
-        pause = new javax.swing.JButton();
         play = new javax.swing.JButton();
+        pause = new javax.swing.JButton();
         stop = new javax.swing.JButton();
         open = new javax.swing.JButton();
         voldown = new javax.swing.JButton();
         volup = new javax.swing.JButton();
         volfull = new javax.swing.JButton();
         mute = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setOpaque(false);
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -58,11 +65,13 @@ public class mp3 extends javax.swing.JFrame {
                 jPanel2MousePressed(evt);
             }
         });
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/mp3.png"))); // NOI18N
         jLabel1.setText("Dev MP3 Player");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 140, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/exit.png"))); // NOI18N
         jButton1.setContentAreaFilled(false);
@@ -71,6 +80,7 @@ public class mp3 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 28, 26));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/minimize.png"))); // NOI18N
         jButton2.setContentAreaFilled(false);
@@ -79,29 +89,17 @@ public class mp3 extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 28, 26));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        song_name.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        song_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        song_name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(song_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 37, 468, 75));
+
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         repeat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/endless.png"))); // NOI18N
         repeat.setContentAreaFilled(false);
@@ -110,22 +108,25 @@ public class mp3 extends javax.swing.JFrame {
                 repeatActionPerformed(evt);
             }
         });
+        jPanel3.add(repeat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 61, 100));
 
-        pause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/play-button.png"))); // NOI18N
-        pause.setContentAreaFilled(false);
-        pause.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pauseActionPerformed(evt);
-            }
-        });
-
-        play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/pause.png"))); // NOI18N
+        play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/play-button.png"))); // NOI18N
         play.setContentAreaFilled(false);
         play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playActionPerformed(evt);
             }
         });
+        jPanel3.add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 0, 65, 100));
+
+        pause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/pause.png"))); // NOI18N
+        pause.setContentAreaFilled(false);
+        pause.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pauseActionPerformed(evt);
+            }
+        });
+        jPanel3.add(pause, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 11, -1, 78));
 
         stop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/stop.png"))); // NOI18N
         stop.setContentAreaFilled(false);
@@ -134,6 +135,7 @@ public class mp3 extends javax.swing.JFrame {
                 stopActionPerformed(evt);
             }
         });
+        jPanel3.add(stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 11, 55, 78));
 
         open.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/files-and-folders.png"))); // NOI18N
         open.setContentAreaFilled(false);
@@ -142,6 +144,7 @@ public class mp3 extends javax.swing.JFrame {
                 openActionPerformed(evt);
             }
         });
+        jPanel3.add(open, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 11, 59, 78));
 
         voldown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume-down.png"))); // NOI18N
         voldown.setContentAreaFilled(false);
@@ -150,6 +153,7 @@ public class mp3 extends javax.swing.JFrame {
                 voldownActionPerformed(evt);
             }
         });
+        jPanel3.add(voldown, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 11, 35, 78));
 
         volup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume-up.png"))); // NOI18N
         volup.setContentAreaFilled(false);
@@ -158,6 +162,7 @@ public class mp3 extends javax.swing.JFrame {
                 volupActionPerformed(evt);
             }
         });
+        jPanel3.add(volup, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 11, 35, 78));
 
         volfull.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/volume.png"))); // NOI18N
         volfull.setContentAreaFilled(false);
@@ -166,6 +171,7 @@ public class mp3 extends javax.swing.JFrame {
                 volfullActionPerformed(evt);
             }
         });
+        jPanel3.add(volfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 11, 35, 78));
 
         mute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/mute.png"))); // NOI18N
         mute.setContentAreaFilled(false);
@@ -174,79 +180,18 @@ public class mp3 extends javax.swing.JFrame {
                 muteActionPerformed(evt);
             }
         });
+        jPanel3.add(mute, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 11, 35, 78));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(repeat, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(play)
-                .addGap(0, 0, 0)
-                .addComponent(pause, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(stop, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(open)
-                .addGap(0, 0, 0)
-                .addComponent(voldown, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(volup, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(volfull, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(mute, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(repeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pause, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(stop, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(play, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(open, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(voldown, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(volup, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(volfull, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(mute, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 118, 468, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MP3_Player/background.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,13 +225,13 @@ public class mp3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_repeatActionPerformed
 
+    private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
+        
+    }//GEN-LAST:event_playActionPerformed
+
     private void pauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pauseActionPerformed
-
-    private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_playActionPerformed
 
     private void stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopActionPerformed
         // TODO add your handling code here:
@@ -352,6 +297,7 @@ public class mp3 extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -360,6 +306,7 @@ public class mp3 extends javax.swing.JFrame {
     private javax.swing.JButton pause;
     private javax.swing.JButton play;
     private javax.swing.JButton repeat;
+    private javax.swing.JLabel song_name;
     private javax.swing.JButton stop;
     private javax.swing.JButton voldown;
     private javax.swing.JButton volfull;
